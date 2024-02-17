@@ -1,11 +1,11 @@
-const countDowndate = new Date("Feb 26, 2024 18:51:50").getTime();
-console.log(countDowndate);
+const countDowndate = new Date("Oct 12, 2024 11:36:50").getTime();
+const success = document.querySelector(".success");
+
+const timer = document.querySelector(".timer");
 
 let x = setInterval(() => {
   const today = new Date().getTime();
-  console.log(today);
   let distance = countDowndate - today;
-  console.log(distance);
   if (distance > 0) {
     let days = Math.floor(distance / (1000 * 60 * 60 * 24));
     let hours = Math.floor(
@@ -20,5 +20,17 @@ let x = setInterval(() => {
     document.getElementById("seconds").innerHTML = seconds;
   } else {
     clearInterval(x);
+    timer.style.display = "none";
+    const image = document.createElement("img");
+    image.src = "./images/success image.png";
+    image.style.width = "70px";
+    image.style.height = "70px";
+    success.appendChild(image);
+    const para = document.createElement("h3");
+    para.textContent = "The timer has completed";
+    para.style.color = "#23af87";
+    para.style.fontFamily = "italic";
+    para.style.fontSize = "40px";
+    success.appendChild(para);
   }
 }, 1000);
