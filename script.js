@@ -1,7 +1,5 @@
-const countDowndate = new Date("Oct 12, 2024 11:36:50").getTime();
+const countDowndate = new Date("Oct 12, 2024 20:12:50").getTime();
 const success = document.querySelector(".success");
-
-const timer = document.querySelector(".timer");
 
 let x = setInterval(() => {
   const today = new Date().getTime();
@@ -20,6 +18,7 @@ let x = setInterval(() => {
     document.getElementById("seconds").innerHTML = seconds;
   } else {
     clearInterval(x);
+    const timer = document.querySelector(".timer");
     timer.style.display = "none";
     const image = document.createElement("img");
     image.src = "./images/success image.png";
